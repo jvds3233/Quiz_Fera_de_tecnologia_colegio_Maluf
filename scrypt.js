@@ -417,7 +417,7 @@ function selectOption(e, index) {
 
     clearInterval(timerInterval);
     selected = index;
-    const correctAnswer = questions[currentQuestion].correct;
+    const correctAnswer = gameQuestions[currentQuestion].correct;
 
     optionButtons.forEach((btn, i) => {
         if (i === correctAnswer) {

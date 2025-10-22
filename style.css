@@ -31,7 +31,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3); /* borda semi-transparente */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* sombra suave */
   padding: 30px;
-  color: #fff;}
+  color: #fff;
+}
 
 .titulo{
     margin: 0;
@@ -223,4 +224,34 @@ body {
 .play-again:hover{
     transform: scale(1.05);
     opacity: 0.9;
+}
+
+/* ✅ EFEITOS DE ANIMAÇÃO PARA ACERTO E ERRO */
+
+/* Efeito quando acerta */
+.option.correct {
+  background-color: #4CAF50;
+  color: white;
+  animation: correctPulse 0.5s ease;
+}
+
+/* Efeito quando erra */
+.option.incorrect {
+  background-color: #f44336;
+  color: white;
+  animation: wrongShake 0.4s ease;
+}
+
+/* Brilho verde suave */
+@keyframes correctPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0px rgba(76, 175, 80, 0.7); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(76, 175, 80, 0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 0px rgba(76, 175, 80, 0.7); }
+}
+
+/* Tremida vermelha */
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
 }
